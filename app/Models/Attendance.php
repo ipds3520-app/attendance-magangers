@@ -10,11 +10,12 @@ class Attendance extends Model
 {
     protected $table = 'attendances';
 
+    
     protected $fillable = [
         'internship_applicant_id',
         'schedule_id',
-        'check_in',
-        'check_out',
+        'check_in_at',
+        'check_out_at',
         'check_in_latitude',
         'check_in_longitude',
         'check_in_accuracy',
@@ -26,9 +27,10 @@ class Attendance extends Model
     ];
 
     protected $casts = [
-        'check_in' => 'datetime',
-        'check_out' => 'datetime',
+        'check_in_at' => 'datetime',
+        'check_out_at' => 'datetime',
     ];
+
 
     public function applicant(): BelongsTo
     {

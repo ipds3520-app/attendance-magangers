@@ -21,8 +21,19 @@ Route::prefix('intern')->name('intern.')->group(function () {
         Route::get('/dashboard', [InternAuthController::class, 'dashboard'])
             ->name('dashboard');
 
+        Route::get('/attendance/history', [InternAuthController::class, 'attendanceHistory'])
+            ->name('attendance.history');
+
+        Route::post('/attendance/check-in', [InternAuthController::class, 'checkIn'])
+            ->name('attendance.checkin');
+
+        Route::post('/attendance/check-out', [InternAuthController::class, 'checkOut'])
+            ->name('attendance.checkout');
+
         Route::post('/logout', [InternAuthController::class, 'logout'])
             ->name('logout');
     });
+
+    
 
 });
