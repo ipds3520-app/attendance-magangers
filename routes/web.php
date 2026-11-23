@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\InternAuthController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('intern.login');
 });
 
 Route::prefix('intern')->name('intern.')->group(function () {
